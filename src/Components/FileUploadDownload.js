@@ -21,6 +21,7 @@ const FileUploadDownload = () => {
       .post("http://localhost:8080/api/upload", formData)
       .then((response) => {
         console.log(response.data);
+        setFile(null);
         fetchDocuments(); // Fetch documents again after uploading a new file
       })
       .catch((error) => {
